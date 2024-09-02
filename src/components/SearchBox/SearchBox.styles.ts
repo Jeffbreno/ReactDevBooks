@@ -7,13 +7,13 @@ export const Container = styled.div`
   padding: 0 10px;
   flex: 1;
 
-  svg{
+  svg {
     height: 20px;
     width: 20px;
     color: #4f575d;
   }
 
-  input{
+  input {
     width: 100%;
     height: 46px;
     border: 0;

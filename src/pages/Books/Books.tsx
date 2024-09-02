@@ -1,20 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useLocation, useSearchParams } from 'react-router-dom'
 import { http } from '../../services/http'
 import { Thumbnail } from '../Thumbnail'
 import { Container, Title, Subtitle } from './Books.styles'
+import { Spinner } from '../../components/Spinner'
 
-interface Book {
-  id: string
-  volumeInfo: {
-    title: string
-    subtitle: string
-    description: string
-    imageLinks?: {
-      thumbnail: string
-    }
-  }
-}
+import { BookState as Book } from '../BookDetail'
 
 interface BooksState {
   totalItems: number
@@ -42,20 +33,25 @@ export function Books() {
   return (
     <Container>
       <h1>Resultado da sua Busca</h1>
-      {books && (
+      {books ? (
         <ul>
           {books.items.map((book) => (
             <li key={book.id}>
-              <Thumbnail
-                thumbnail={book.volumeInfo.imageLinks?.thumbnail}
-                title={book.volumeInfo.title}
-                bgColor="#d9d9d9"
-              />
-              <Title>{book.volumeInfo.title}</Title>
-              <Subtitle>{book.volumeInfo.subtitle}</Subtitle>
+              <Link to={`/books/${book.id}`}>
+                <Thumbnail
+                  thumbnail={book.volumeInfo.imageLinks?.thumbnail}
+                  title={book.volumeInfo.title}
+                  size="small"
+                  bgColor="#d9d9d9"
+                />
+                <Title>{book.volumeInfo.title}</Title>
+                <Subtitle>{book.volumeInfo.subtitle}</Subtitle>
+              </Link>
             </li>
           ))}
         </ul>
+      ) : (
+        <Spinner />
       )}
     </Container>
   )

@@ -15,7 +15,7 @@ export function Thumbnail({
   size = 'small'
 }: ThumbnailProps) {
   return (
-    <Container bgColor={bgColor} size={size}>
+    <Container $bgColor={bgColor} $size={size}>
       {thumbnail ? <img src={thumbnail} alt={title} /> : <NoImg />}
     </Container>
   )

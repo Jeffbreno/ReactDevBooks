@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
 interface ContainerProps {
-  bgColor: string
-  size: 'small' | 'large'
+  $bgColor: string
+  $size: 'small' | 'large'
 }
 
 const containerCustomStyles = {
@@ -41,12 +41,12 @@ export const Container = styled.div<ContainerProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   transition: all 0.5s;
 
-  ${(props) => containerCustomStyles[props.size]}
+  ${(props) => containerCustomStyles[props.$size]}
 
   img {
-    ${(props) => imageCustomStyles[props.size]}
+    ${(props) => imageCustomStyles[props.$size]}
   }
 `
