@@ -9,7 +9,7 @@ import {
   SpinnerContainer,
   SubTitulo
 } from './BooksDetail.styles'
-import { Thumbnail } from '../Thumbnail'
+import { Thumbnail } from '../../components/Thumbnail'
 import { Title } from '../Books/Books.styles'
 import ReactHtmlParser from 'react-html-parser'
 import ArrowLeftIcon from '../../icons/arrow-left.svg?react'

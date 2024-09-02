@@ -32,6 +32,12 @@ export const Container = styled.div`
   a {
     text-decoration: none;
   }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+  }
 `
 
 const clampText = css`
@@ -47,8 +53,12 @@ export const Title = styled.h2`
   margin-top: 16px;
   margin-bottom: 8px;
   color: #222;
-  
+
   ${clampText}
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 `
 export const Subtitle = styled.h3`
   font-weight: normal;
@@ -56,4 +66,8 @@ export const Subtitle = styled.h3`
   color: #222;
 
   ${clampText}
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 `
