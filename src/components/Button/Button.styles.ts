@@ -38,11 +38,11 @@ interface ButtonProps {
   variant?: ButttonVariants
   color?: ButtonColors
   size?: ButtonSizes
-  fullWidth?: boolean
+  $fullwidth?: boolean
 }
 
 export const Button = styled.button<ButtonProps>`
-  ${({ theme, variant = 'default', color = 'primary', size = 'large', fullWidth = false }) => css`
+  ${({ theme, variant = 'default', color = 'primary', size = 'large', $fullwidth = false }) => css`
     display: block;
     border-radius: ${theme.border.radius.default};
     border: 0;
@@ -54,6 +54,6 @@ export const Button = styled.button<ButtonProps>`
 
     ${butttonVariant[variant](color, theme)}
     ${buttonSize[size](theme)}
-    ${fullWidth && buttonFullWidth()}
+    ${$fullwidth && buttonFullWidth()}
   `}
 `
