@@ -19,7 +19,8 @@ export const theme = {
       medium: '1.6rem',
       large: '1.8rem',
       xlarge: '2.0rem',
-      xxlarge: '2.8rem'
+      xxlarge: '2.2rem',
+      xxxlarge: '2.8rem'
     }
   },
   colors: {
@@ -35,7 +36,8 @@ export const theme = {
     }
   },
   spacings: {
-    xxxsmall: '0.6rem',
+    xxxxsmall: '0.4rem',
+    xxxsmall: '0.8rem',
     xxsmall: '0.8rem',
     xsmall: '1.6rem',
     small: '2.4rem',
